@@ -5,3 +5,4 @@ Code to take power from renewable energy (e.g. wind) and convert it to hydrogen 
 2. electrolyser_full.py - using the electrolyser type (PEM,Alkaline,AEM), number of stacks, stack rated capacity (MW), power input (MW) and minimum load (%) this solves for the current at each time. Specific electrolyser materials, catalysts, thicknesses can be changed within the script.
 3. Stack rated capacity is used along with cell area (fixed inside each electrolyte type) to calculate number of cells.
 4. Minimum load is used as post-processing to set all parameters to 0 when the power applied to each stack is less than the minimum load.
+5. electrolyserPolarisation.py - this code produces the polarisation curves for the three electrolysers, with parameters roughly chosen to fit some experimental data in literature.
