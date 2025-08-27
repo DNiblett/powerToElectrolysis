@@ -249,7 +249,8 @@ def runElectrolyserFull(powerInput, stackNumber, stackCapacity, minLoad, electro
     powerUsed = potential*numberOfCells*cellCurrent*numberOfStacks/1e6; #MW
     powerUsedPerStack = powerUsed/numberOfStacks;
     
-    stackRatedPower = 20000*1.8*numberOfCells*cellArea/1e6; # stack rated power (MW)
+    #stackRatedPower = 20000*1.8*numberOfCells*cellArea/1e6; # stack rated power (MW)
+    stackRatedPower = stackCapacity*(1e-6); # convert back to MW
     capacityPerStack = (powerUsedPerStack/stackRatedPower)*100;
     
     """
