@@ -70,7 +70,7 @@ def runElectrolyserFull(powerInput, stackNumber, stackCapacity, minLoad, electro
          set point of 1.8 V (j = 2 PEM)
          set point of 2.2 V (j = 0.25 Alkaline)
          2 MW system: 2e6/(2.2*2500) = N * A_cells
-         A_cells = 1 x 1 m
+         A_cells = 0.5 * 0.5 [commercial MW stacks areas of 0.1 - 0.3 m2 https://doi.org/10.1021/acs.chemrev.3c00904]
          N_cells = 2e6/(2.2*2500*1x1) = N
          
         """
@@ -107,7 +107,7 @@ def runElectrolyserFull(powerInput, stackNumber, stackCapacity, minLoad, electro
             p.electrolyte.volFraction = 1;   # [S/m]
             
             
-            cellArea = 1*1; # width x height
+            cellArea = 0.5*0.5; # width x height
             numberOfCells = round(stackCapacity/(1.8*20000*cellArea)); # number of cells in stack
             
         
@@ -161,7 +161,7 @@ def runElectrolyserFull(powerInput, stackNumber, stackCapacity, minLoad, electro
             p.electrolyte.volFraction = 0.5;   # [S/m]
             p.electrolyte.conductivity = 56*p.electrolyte.volFraction**(1.5); # [S/m]
             
-            cellArea = 1*1; # width x height
+            cellArea = 1.3*1.3; # width x height [working backwards from 230 cells https://nelhydrogen.com/wp-content/uploads/2024/08/A-Series-Spec-Sheet%E2%80%93DOC001974_03.pdf]
             numberOfCells = round(stackCapacity/(2.2*2500*cellArea)); # number of cells in stack
             
         else:
